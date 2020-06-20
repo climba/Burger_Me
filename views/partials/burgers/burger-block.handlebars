@@ -1,0 +1,9 @@
+<li class="list-group-item li-card">
+	{{name}}
+
+	 {{#if eaten}}<button type="button" class="change-eaten btn btn-primary float-right" data-id="{{id}}" data-neweat="{{eaten}}">
+		You can eat ME!! <i class="fa fa-plus-circle" aria-hidden="true"></i></button>{{else}}
+		<button type="button" class="change-eaten btn btn-success float-right" data-id="{{id}}" data-neweat="{{eaten}}">
+		 That was YUMMY!! <i class="fa fa-minus-circle" aria-hidden="true"></i></button>{{/if}}
+	
+</li>

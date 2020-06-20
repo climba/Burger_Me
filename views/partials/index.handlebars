@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card text-center mb-3 special-card">
+      <div class="card-header">
+        Add a Burger
+      </div>
+      <div class="card-body special-card">
+        <form class="create-form form-inline">
+          <div class="form-group mx-sm-4 mb-2">
+            <input type="text" class="form-control" id="burg-name" name="name" placeholder="burger name...">
+          </div>
+          <div class="form-check mx-sm-3 mb-2">
+            <input class="form-check-input" type="radio" name="eaten" value="1" checked> Eaten!
+          </div>
+          <div class="form-check mx-sm-3 mb-2">
+            <input class="form-check-input" type="radio" name="eaten" value="0"> Not Eaten
+          </div>
+          <button type="submit" class="btn btn-info mb-2">Add a Burger</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card special-card">
+      <div class="card-header">
+        <h5 class="card-title text-center"><i class="fa fa-cutlery" aria-hidden="true"></i>
+          Burgers that are not eaten!</h5> 
+      </div>
+      <div class="card-body special-card">
+        <ul class="list-group list-group-flush ul-card">
+          {{#each burgers}} {{#unless eaten}} {{> burgers/burger-block eaten=true}} {{/unless}} {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card special-card">
+      <div class="card-header">
+        <h5 class="card-title text-center"><img src="/assets/images/hamburger2-sm.png" width="28px">
+          Burgers that are eaten!</h5>
+      </div>
+      <div class="card-body special-card">
+        <ul class="list-group list-group-flush ul-card">
+          {{#each burgers}} {{#if eaten}} {{> burgers/burger-block eaten=false}} {{/if}} {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
